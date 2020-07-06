@@ -1,7 +1,13 @@
 import React from 'react'
 
-function App() {
-  return <div>Hello World</div>
-}
+import Home from './components/Home'
+import Navbar from './components/Navbar'
+
+const App = () => (
+  <>
+    <Navbar />
+    <Home />
+  </>
+)
 
 export default App
