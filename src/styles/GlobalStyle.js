@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Eurostile';
-        src: url('./fonts/eurostile.woff');
+        src: url('./fonts/eurostile.woff') format('woff');
     }
 
     *,
@@ -13,8 +13,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 200;
+        font-weight: 300;
         margin: 0;
         padding: 0;
     }

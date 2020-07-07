@@ -11,7 +11,7 @@ import {
   LogoImg,
   Row,
   StyledLink,
-} from '../styles/Content'
+} from '../styles/content'
 
 const Navbar = () => (
   <Header>

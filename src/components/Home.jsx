@@ -2,10 +2,10 @@ import React from 'react'
 
 import Avatar from '../img/Avatar.svg'
 import Computer from '../img/Computer.svg'
-import { H2, Img, P, Container, Section } from '../styles/Content'
+import { H2, Img, P, Container, Section } from '../styles/content'
 
 const Home = () => (
-  <Section dark>
+  <Section home dark>
     <Container center>
       <H2>Full-Stack Developer</H2>
       <P>
