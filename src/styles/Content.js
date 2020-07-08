@@ -14,7 +14,7 @@ export const H1 = styled.h1`
   font-family: ${titleFont};
   font-size: ${mobileFontXL};
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
-  margin: 1em 0;
+  margin: 1.3em 0 1.3em;
 `
 
 export const H2 = styled.h2`
@@ -119,10 +119,14 @@ export const Container = styled.div`
     `}
 `
 
+export const Form = styled.form`
+  text-align: left;
+`
+
 export const Header = styled.header`
   width: 100%;
   background-color: #393e46;
-  padding: 1.5em 0;
+  padding: 1em 0;
 
   position: fixed;
   top: 0;
@@ -131,6 +135,56 @@ export const Header = styled.header`
 
 export const Icon = styled.img`
   margin-right: 0.2em;
+`
+
+export const Input = styled.input`
+  display: block;
+  font-family: ${textFont};
+  font-size: ${mobileFontS};
+  background: #e5e5e5;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  margin: 0.5em 0 0;
+  padding: 0.75em 1em;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(43, 206, 214, 1);
+  }
+
+  ${({ submit }) =>
+    submit &&
+    css`
+      text-transform: uppercase;
+      font-family: ${titleFont};
+      font-size: ${mobileFontM};
+      background: none;
+      color: #2bced6;
+      border: 2px solid #2bced6;
+      border-radius: 50px;
+      margin: 1.5em 0 0;
+      padding: 0.5em 0;
+
+      &:hover,
+      &:focus {
+        color: #eeeeee;
+        background: #2bced6;
+        outline: none;
+      }
+    `}
+`
+
+export const Label = styled.label`
+  font-family: ${titleFont};
+  font-size: ${mobileFontM};
+  font-weight: bold;
+  color: #2bced6;
+  display: block;
+
+  & + & {
+    margin-top: 1.5em;
+  }
 `
 
 export const LogoImg = styled.img`
@@ -154,4 +208,24 @@ export const Section = styled.section`
 
 export const StyledLink = styled.a`
   cursor: pointer;
+`
+
+export const Textarea = styled.textarea`
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 200px;
+  font-family: ${textFont};
+  font-size: ${mobileFontS};
+  background: #e5e5e5;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  margin: 0.5em 0 0;
+  padding: 1em 1em;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(43, 206, 214, 1);
+  }
 `
