@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 
+const mobileFontXS = '0.875rem'
 const mobileFontS = '1.2rem'
 const mobileFontM = '1.75rem'
 const mobileFontL = '2.3rem'
@@ -44,30 +45,48 @@ export const P = styled.p`
   font-size: ${mobileFontS};
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
   margin: 0;
+
+  ${({ footer }) =>
+    footer &&
+    css`
+      font-size: ${mobileFontXS};
+      color: #8392a7;
+    `}
 `
 
-export const Img = styled.img`
-  max-width: 100%;
+export const A = styled.a`
+  cursor: pointer;
 
-  ${({ avatar }) =>
-    avatar &&
+  ${({ icon }) =>
+    icon &&
     css`
-      width: 40%;
-      max-width: 200px;
-      margin: 3.7em 0;
-    `}
+      width: 50px;
+      height: 50px;
+      color: #2bced6;
+      border-radius: 50%;
+      border: 2px solid #47505e;
 
-  ${({ computer }) =>
-    computer &&
-    css`
-      width: 100%;
-      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & + & {
+        margin-left: 1em;
+      }
+
+      &:focus,
+      &:hover {
+        color: #222831;
+        border: 2px solid #2bced6;
+        background: #2bced6;
+      }
     `}
 `
 
 export const Button = styled.a`
   cursor: pointer;
-  font-family: 'Eurostile';
+  font-family: ${titleFont};
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
@@ -77,8 +96,39 @@ export const Button = styled.a`
   margin-right: 1.5em;
   padding: 0.45em 0.85em;
 
-  display: flex;
-  align-items: center;
+  &:focus,
+  &:hover {
+    color: #00adb5;
+    background-color: #eeeeee;
+  }
+
+  ${({ row }) =>
+    row &&
+    css`
+      display: flex;
+      align-items: center;
+    `}
+
+  ${({ rectangle }) =>
+    rectangle &&
+    css`
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: ${textFont};
+      font-weight: 300;
+      background: none;
+      border-radius: 0;
+      border: 1px solid #eeeeee;
+      margin: 1.2em 0 2em;
+      padding: 0.45em 1em;
+
+      &:focus,
+      &:hover {
+        color: #222831;
+        background: #eeeeee;
+      }
+    `}
 `
 
 export const Card = styled.div`
@@ -110,6 +160,13 @@ export const Container = styled.div`
       width: 90%;
     `}
 
+  ${({ footerItem }) =>
+    footerItem &&
+    css`
+      width: 100%;
+      border-top: 1px solid #47505d;
+    `}
+
   ${({ row }) =>
     row &&
     css`
@@ -133,8 +190,24 @@ export const Header = styled.header`
   z-index: 100;
 `
 
-export const Icon = styled.img`
-  margin-right: 0.2em;
+export const Img = styled.img`
+  max-width: 100%;
+  /* opacity: ${({ fade }) => (fade ? '0.6' : '1')}; */
+
+  ${({ avatar }) =>
+    avatar &&
+    css`
+      width: 40%;
+      max-width: 200px;
+      margin: 3.7em 0;
+    `}
+
+  ${({ computer }) =>
+    computer &&
+    css`
+      width: 100%;
+      max-width: 700px;
+    `}
 `
 
 export const Input = styled.input`
@@ -156,9 +229,12 @@ export const Input = styled.input`
   ${({ submit }) =>
     submit &&
     css`
+      cursor: pointer;
       text-transform: uppercase;
+      letter-spacing: 2px;
       font-family: ${titleFont};
       font-size: ${mobileFontM};
+      font-weight: bold;
       background: none;
       color: #2bced6;
       border: 2px solid #2bced6;
@@ -187,17 +263,16 @@ export const Label = styled.label`
   }
 `
 
-export const LogoImg = styled.img`
-  ${({ fade }) =>
-    fade &&
-    css`
-      opacity: 0.6;
-    `}
-`
-
 export const Row = styled.div`
   display: flex;
   align-items: center;
+
+  ${({ footer }) =>
+    footer &&
+    css`
+      justify-content: center;
+      margin: 2em 0;
+    `}
 `
 
 export const Section = styled.section`
@@ -206,8 +281,31 @@ export const Section = styled.section`
   padding: ${({ home }) => (home ? '6em 0 0' : '0.1em 0 3em')};
 `
 
+export const StyledFooter = styled.footer`
+  background: #222831;
+  padding: 0.1em 0 1em;
+`
+
 export const StyledLink = styled.a`
   cursor: pointer;
+
+  &:focus,
+  &:hover {
+    opacity: 0.7;
+  }
+
+  ${({ footerImg }) =>
+    footerImg &&
+    css`
+      display: inline-block;
+      opacity: 0.6;
+      margin: 2.3em 0;
+
+      &:focus,
+      &:hover {
+        opacity: 1;
+      }
+    `}
 `
 
 export const Textarea = styled.textarea`
