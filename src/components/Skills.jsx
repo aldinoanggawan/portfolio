@@ -1,9 +1,7 @@
 import React from 'react'
 
-import BackEndIcon from '../img/BackEndIcon.svg'
-import FrontEndIcon from '../img/FrontEndIcon.svg'
-import OtherIcon from '../img/OtherIcon.svg'
-import { H1, H3, H4, Img, P, Container, Section, Card } from '../styles/content'
+import { H1, H3, H4, P, Container, Section, Card } from '../styles/content'
+import { BackEndIcon, FrontEndIcon, OtherIcon } from '../styles/icon'
 
 const Skills = () => (
   <Section>
@@ -12,7 +10,7 @@ const Skills = () => (
       <Container card center>
         <Card>
           <Card item>
-            <Img src={FrontEndIcon} alt='front end icon' />
+            <FrontEndIcon />
             <H3>Front-End</H3>
             <H4>Language</H4>
             <P dark>HTML5, CSS3, JavaScript</P>
@@ -22,7 +20,7 @@ const Skills = () => (
             <P dark>Reactstrap, Material UI</P>
           </Card>
           <Card item>
-            <Img src={BackEndIcon} alt='back end icon' />
+            <BackEndIcon />
             <H3>Back-End</H3>
             <H4>Language</H4>
             <P dark>Python</P>
@@ -32,7 +30,7 @@ const Skills = () => (
             <P dark>PostgresQL</P>
           </Card>
           <Card item>
-            <Img src={OtherIcon} alt='other icon' />
+            <OtherIcon />
             <H3>Other</H3>
             <H4>UI / UX</H4>
             <P dark>Figma</P>

@@ -192,7 +192,6 @@ export const Header = styled.header`
 
 export const Img = styled.img`
   max-width: 100%;
-  /* opacity: ${({ fade }) => (fade ? '0.6' : '1')}; */
 
   ${({ avatar }) =>
     avatar &&
