@@ -9,6 +9,7 @@
     "@styled-icons/evaicons-outline": "^10.6.0",
     "@styled-icons/fa-solid": "^10.6.0",
     "@styled-icons/octicons": "^10.6.0",
+    "@styled-icons/simple-icons": "^10.8.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -34,6 +35,7 @@
       "jsx-quotes": "off",
       "implicit-arrow-linebreak": "off",
       "import/prefer-default-export": "off",
+      "no-confusing-arrow": "off",
       "object-curly-newline": "off",
       "operator-linebreak": "off",
       "semi": "off"

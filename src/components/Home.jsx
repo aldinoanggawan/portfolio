@@ -8,7 +8,7 @@ const Home = () => (
   <Section home dark>
     <Container center>
       <H2>Full-Stack Developer</H2>
-      <P>
+      <P home>
         Hi I’m Angga, a full-stack developer who’s comfortable with building
         web-apps using React and I love what I do.
       </P>

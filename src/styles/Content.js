@@ -1,11 +1,36 @@
 import styled, { css } from 'styled-components'
 
-const mobileFontXS = '0.875rem'
-const mobileFontS = '1.2rem'
-const mobileFontM = '1.75rem'
-const mobileFontL = '2.3rem'
-const mobileFontXL = '2.5rem'
-
+export const fontSize = {
+  contact: {
+    mobileTitle: '1.5rem',
+    mobileTitle2: '1.75rem',
+    mobileText: '1.1rem',
+  },
+  footer: {
+    mobileText: '1rem',
+    mobileText2: '0.75rem',
+  },
+  home: {
+    mobileTitle: '2.3rem',
+    mobileText: '1.2rem',
+  },
+  navbar: {
+    mobileTitle: '1.2rem',
+  },
+  portfolio: {
+    mobileTitle: '1.7rem',
+    mobileText: '1.1rem',
+    mobileText2: '1rem',
+  },
+  section: {
+    mobileTitle: '2.5rem',
+  },
+  skills: {
+    mobileTitle: '2rem',
+    mobileTitle2: '1.25rem',
+    mobileText: '1.1875rem',
+  },
+}
 const textFont = 'Montserrat, sans-serif'
 const titleFont = 'Eurostile'
 
@@ -13,28 +38,36 @@ export const H1 = styled.h1`
   text-transform: uppercase;
   letter-spacing: 5px;
   font-family: ${titleFont};
-  font-size: ${mobileFontXL};
+  font-size: ${fontSize.section.mobileTitle};
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
   margin: 1.3em 0 1.3em;
 `
 
 export const H2 = styled.h2`
   font-family: ${titleFont};
-  font-size: ${mobileFontL};
+  font-size: ${fontSize.home.mobileTitle};
   color: #eeeeee;
   margin: 1.4em 0 0.6em;
 `
 
 export const H3 = styled.h3`
   font-family: ${titleFont};
-  font-size: ${mobileFontM};
-  color: #222831;
-  margin: 0.5em 0 1.75em;
+  font-size: ${fontSize.skills.mobileTitle};
+  color: ${({ dark }) => (dark ? '#222831' : '#2BCED6')};
+  margin: 0.5em 0 0em;
+
+  ${({ portfolio }) =>
+    portfolio &&
+    css`
+      text-align: left;
+      font-size: ${fontSize.portfolio.mobileTitle};
+      margin: 0.5em 0;
+    `}
 `
 
 export const H4 = styled.h4`
   font-family: ${textFont};
-  font-size: ${mobileFontS};
+  font-size: ${fontSize.skills.mobileTitle2};
   font-weight: 600;
   color: #2bced6;
   margin: 1.9em 0 0.5em;
@@ -42,20 +75,52 @@ export const H4 = styled.h4`
 
 export const P = styled.p`
   font-family: ${textFont};
-  font-size: ${mobileFontS};
+  text-align: ${({ left }) => (left ? 'left' : 'center')};
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
   margin: 0;
 
   ${({ footer }) =>
     footer &&
     css`
-      font-size: ${mobileFontXS};
+      font-size: ${fontSize.footer.mobileText};
       color: #8392a7;
+    `}
+
+  ${({ footerXs }) =>
+    footerXs &&
+    css`
+      font-size: ${fontSize.footer.mobileText2};
+      color: #8392a7;
+    `}
+
+  ${({ home }) =>
+    home &&
+    css`
+      font-size: ${fontSize.home.mobileText};
+    `}
+
+  ${({ skills }) =>
+    skills &&
+    css`
+      font-size: ${fontSize.skills.mobileText};
+    `}
+
+  ${({ portfolio }) =>
+    portfolio &&
+    css`
+      line-height: 1.5;
+      font-size: ${fontSize.portfolio.mobileText};
     `}
 `
 
 export const A = styled.a`
+  text-decoration: none;
   cursor: pointer;
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
 
   ${({ icon }) =>
     icon &&
@@ -87,14 +152,19 @@ export const A = styled.a`
 export const Button = styled.a`
   cursor: pointer;
   font-family: ${titleFont};
-  font-size: 1rem;
+  font-size: ${({ portfolio }) =>
+    portfolio ? fontSize.portfolio.mobileText : fontSize.navbar.mobileTitle};
   font-weight: bold;
   text-decoration: none;
   color: #eeeeee;
   background-color: #00adb5;
-  border-radius: 50px;
-  margin-right: 1.5em;
-  padding: 0.45em 0.85em;
+  border-radius: ${({ portfolio }) => (portfolio ? '5px' : '50px')};
+  margin-right: ${({ portfolio }) => (portfolio ? '0' : '1em')};
+  padding: 0.35em 0.65em;
+
+  & + & {
+    margin-left: 0.5em;
+  }
 
   &:focus,
   &:hover {
@@ -132,11 +202,14 @@ export const Button = styled.a`
 `
 
 export const Card = styled.div`
-  border: 2px solid #d4e3e3;
-  border-radius: 15px;
+  ${({ itemPortfolio }) =>
+    itemPortfolio &&
+    css`
+      padding: 0 0.75em 0.75em;
+    `}
 
-  ${({ item }) =>
-    item &&
+  ${({ itemSkills }) =>
+    itemSkills &&
     css`
       border: none;
       border-radius: 0;
@@ -144,6 +217,30 @@ export const Card = styled.div`
 
       & + & {
         border-top: 1px solid #d4e3e3;
+      }
+    `}
+
+  ${({ portfolio }) =>
+    portfolio &&
+    css`
+      background-color: #222831;
+    `}
+
+  ${({ skills }) =>
+    skills &&
+    css`
+      border: 2px solid #d4e3e3;
+      border-radius: 15px;
+    `}
+
+  ${({ tag }) =>
+    tag &&
+    css`
+      background-color: #14171d;
+      padding: 0.25em 0.5em;
+
+      & + & {
+        margin-left: 0.2em;
       }
     `}
 `
@@ -212,7 +309,7 @@ export const Img = styled.img`
 export const Input = styled.input`
   display: block;
   font-family: ${textFont};
-  font-size: ${mobileFontS};
+  font-size: ${fontSize.contact.mobileText};
   background: #e5e5e5;
   border: none;
   border-radius: 3px;
@@ -232,7 +329,7 @@ export const Input = styled.input`
       text-transform: uppercase;
       letter-spacing: 2px;
       font-family: ${titleFont};
-      font-size: ${mobileFontM};
+      font-size: ${fontSize.contact.mobileTitle2};
       font-weight: bold;
       background: none;
       color: #2bced6;
@@ -245,14 +342,14 @@ export const Input = styled.input`
       &:focus {
         color: #eeeeee;
         background: #2bced6;
-        outline: none;
+        box-shadow: none;
       }
     `}
 `
 
 export const Label = styled.label`
   font-family: ${titleFont};
-  font-size: ${mobileFontM};
+  font-size: ${fontSize.contact.mobileTitle};
   font-weight: bold;
   color: #2bced6;
   display: block;
@@ -272,12 +369,32 @@ export const Row = styled.div`
       justify-content: center;
       margin: 2em 0;
     `}
+
+  ${({ portfolioButton }) =>
+    portfolioButton &&
+    css`
+      justify-content: flex-end;
+      margin: 2em 0 0;
+    `}
+
+  ${({ portfolioTag }) =>
+    portfolioTag &&
+    css`
+      justify-content: flex-start;
+      margin: 1em 0 1em;
+    `}
 `
 
 export const Section = styled.section`
   background-color: ${({ dark }) => (dark ? '#393E46' : '#eeeeee')};
   min-height: 80vh;
   padding: ${({ home }) => (home ? '6em 0 0' : '0.1em 0 3em')};
+`
+
+export const Span = styled.span`
+  font-family: ${textFont};
+  color: #2bced6;
+  opacity: 0.6;
 `
 
 export const StyledFooter = styled.footer`
@@ -313,7 +430,7 @@ export const Textarea = styled.textarea`
   max-width: 100%;
   min-height: 200px;
   font-family: ${textFont};
-  font-size: ${mobileFontS};
+  font-size: ${fontSize.contact.mobileText};
   background: #e5e5e5;
   border: none;
   border-radius: 3px;

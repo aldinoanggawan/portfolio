@@ -8,38 +8,58 @@ const Skills = () => (
     <Container center>
       <H1 dark>Skills</H1>
       <Container card center>
-        <Card>
-          <Card item>
+        <Card skills>
+          <Card itemSkills>
             <FrontEndIcon />
-            <H3>Front-End</H3>
+            <H3 dark>Front-End</H3>
             <H4>Language</H4>
-            <P dark>HTML5, CSS3, JavaScript</P>
+            <P dark skills>
+              HTML5, CSS3, JavaScript
+            </P>
             <H4>Library</H4>
-            <P dark>React, Redux</P>
+            <P dark skills>
+              React, Redux
+            </P>
             <H4>React UI</H4>
-            <P dark>Reactstrap, Material UI</P>
+            <P dark skills>
+              Reactstrap, Material UI
+            </P>
           </Card>
-          <Card item>
+          <Card itemSkills>
             <BackEndIcon />
-            <H3>Back-End</H3>
+            <H3 dark>Back-End</H3>
             <H4>Language</H4>
-            <P dark>Python</P>
+            <P dark skills>
+              Python
+            </P>
             <H4>Framework</H4>
-            <P dark>Flask</P>
+            <P dark skills>
+              Flask
+            </P>
             <H4>Database</H4>
-            <P dark>PostgresQL</P>
+            <P dark skills>
+              PostgresQL
+            </P>
           </Card>
-          <Card item>
+          <Card itemSkills>
             <OtherIcon />
-            <H3>Other</H3>
+            <H3 dark>Other</H3>
             <H4>UI / UX</H4>
-            <P dark>Figma</P>
+            <P dark skills>
+              Figma
+            </P>
             <H4>Version Control</H4>
-            <P dark>Git</P>
+            <P dark skills>
+              Git
+            </P>
             <H4>Cloud Platform</H4>
-            <P dark>Netlify, Heroku, AWS S3</P>
+            <P dark skills>
+              Netlify, Heroku, AWS S3
+            </P>
             <H4>IoT</H4>
-            <P dark>Raspberry Pi, Arduino</P>
+            <P dark skills>
+              Raspberry Pi, Arduino
+            </P>
           </Card>
         </Card>
       </Container>

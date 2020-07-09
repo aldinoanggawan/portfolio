@@ -1,16 +1,7 @@
 import React from 'react'
 
 import Logo from '../img/Logo.svg'
-import {
-  A,
-  P,
-  Button,
-  Container,
-  Img,
-  Row,
-  StyledFooter,
-  StyledLink,
-} from '../styles/content'
+import { A, P, Button, Container, Img, Row, StyledFooter, StyledLink } from '../styles/content'
 import { GithubIcon, LinkedInIcon, MailIcon } from '../styles/icon'
 
 const Footer = () => (
@@ -36,7 +27,7 @@ const Footer = () => (
           <MailIcon />
         </A>
       </Row>
-      <P footer>© 2020 Aldino Anggawan. All rights reserved.</P>
+      <P footerXs>© 2020 Aldino Anggawan. All rights reserved.</P>
     </Container>
   </StyledFooter>
 )
