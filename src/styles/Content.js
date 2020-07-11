@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 
+// font sizes and style
 export const fontSize = {
   contact: {
     mobileTitle: '1.5rem',
@@ -34,6 +35,7 @@ export const fontSize = {
 const textFont = 'Montserrat, sans-serif'
 const titleFont = 'Eurostile'
 
+// typography (alphabetical order)
 export const H1 = styled.h1`
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -113,6 +115,7 @@ export const P = styled.p`
     `}
 `
 
+// styled components (alphabetical order)
 export const A = styled.a`
   text-decoration: none;
   cursor: pointer;
@@ -224,6 +227,10 @@ export const Card = styled.div`
     portfolio &&
     css`
       background-color: #222831;
+
+      & + & {
+        margin-top: 3em;
+      }
     `}
 
   ${({ skills }) =>
@@ -231,17 +238,6 @@ export const Card = styled.div`
     css`
       border: 2px solid #d4e3e3;
       border-radius: 15px;
-    `}
-
-  ${({ tag }) =>
-    tag &&
-    css`
-      background-color: #14171d;
-      padding: 0.25em 0.5em;
-
-      & + & {
-        margin-left: 0.2em;
-      }
     `}
 `
 
@@ -380,8 +376,9 @@ export const Row = styled.div`
   ${({ portfolioTag }) =>
     portfolioTag &&
     css`
+      flex-wrap: wrap;
       justify-content: flex-start;
-      margin: 1em 0 1em;
+      margin: 1em 0;
     `}
 `
 
@@ -391,12 +388,6 @@ export const Section = styled.section`
   padding: ${({ home }) => (home ? '6em 0 0' : '0.1em 0 3em')};
 `
 
-export const Span = styled.span`
-  font-family: ${textFont};
-  color: #2bced6;
-  opacity: 0.6;
-`
-
 export const StyledFooter = styled.footer`
   background: #222831;
   padding: 0.1em 0 1em;
@@ -404,6 +395,8 @@ export const StyledFooter = styled.footer`
 
 export const StyledLink = styled.a`
   cursor: pointer;
+  text-decoration: none;
+  color: #2bced6;
 
   &:focus,
   &:hover {
@@ -422,6 +415,25 @@ export const StyledLink = styled.a`
         opacity: 1;
       }
     `}
+`
+
+export const Tag = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1em 0 0.8em;
+  padding: 0;
+`
+
+export const TagItem = styled.li`
+  font-family: ${textFont};
+  background-color: #14171d;
+  color: #2bced6;
+  opacity: 0.6;
+  margin-right: 0.2em;
+  margin-bottom: 0.2em;
+  padding: 0.25em 0.5em;
 `
 
 export const Textarea = styled.textarea`
