@@ -1,4 +1,5 @@
 import ExpenseTracker from '../img/ExpenseTracker.png'
+import EzPark from '../img/EzPark.png'
 import InstagramClone from '../img/InstagramClone.png'
 import Jdecoration from '../img/Jdecoration.png'
 
@@ -23,6 +24,22 @@ export const skills = {
       {
         id: 3,
         text: 'PWA',
+      },
+      {
+        id: 4,
+        text: 'Flask',
+      },
+      {
+        id: 5,
+        text: 'PSQL',
+      },
+      {
+        id: 6,
+        text: 'REST API',
+      },
+      {
+        id: 7,
+        text: 'AWS S3',
       },
     ],
     text:
@@ -92,5 +109,43 @@ export const skills = {
     text:
       'A CRUD expense tracker web-app that shows transactions and calculates the balance based on the income / expense submitted.',
     title: 'Expense Tracker',
+  },
+  4: {
+    id: 4,
+    image: EzPark,
+    link: {
+      github: 'https://github.com/aldinoanggawan/EzPark-react-app',
+      sandbox: 'https://codesandbox.io/s/github/aldinoanggawan/expense-tracker-redux',
+      live: 'https://ezpark-malledition.netlify.app/',
+    },
+    tag: [
+      {
+        id: 1,
+        text: 'React',
+      },
+      {
+        id: 2,
+        text: 'Flask',
+      },
+      {
+        id: 3,
+        text: 'PSQL',
+      },
+      {
+        id: 4,
+        text: 'REST API',
+      },
+      {
+        id: 5,
+        text: 'CRUD',
+      },
+      {
+        id: 6,
+        text: 'Raspberry Pi',
+      },
+    ],
+    text:
+      'A bootcamp group final project of parking simulation web-app that shows available parking spots, gives direction and record the parking chosen. The web-app is connected to a Raspberry Pi to keep track of the parking spots.',
+    title: 'EzPark',
   },
 }

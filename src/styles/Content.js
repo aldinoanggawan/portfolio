@@ -2,10 +2,20 @@ import styled, { css } from 'styled-components'
 
 // font sizes and style
 export const fontSize = {
+  awards: {
+    mobileTitle: '1.8rem',
+    mobileText: '1.2rem',
+    mobileText2: '1rem',
+  },
   contact: {
     mobileTitle: '1.5rem',
     mobileTitle2: '1.75rem',
     mobileText: '1.1rem',
+  },
+  education: {
+    mobileTitle: '1.8rem',
+    mobileText: '1.2rem',
+    mobileText2: '1rem',
   },
   footer: {
     mobileText: '1rem',
@@ -42,7 +52,7 @@ export const H1 = styled.h1`
   font-family: ${titleFont};
   font-size: ${fontSize.section.mobileTitle};
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
-  margin: 1.3em 0 1.3em;
+  margin: 0 0 1.3em;
 `
 
 export const H2 = styled.h2`
@@ -56,7 +66,21 @@ export const H3 = styled.h3`
   font-family: ${titleFont};
   font-size: ${fontSize.skills.mobileTitle};
   color: ${({ dark }) => (dark ? '#222831' : '#2BCED6')};
-  margin: 0.5em 0 0em;
+  margin: 0.5em 0 0;
+
+  ${({ awards }) =>
+    awards &&
+    css`
+      font-size: ${fontSize.awards.mobileTitle};
+      margin: 0 0 0.1em;
+    `}
+
+  ${({ education }) =>
+    education &&
+    css`
+      font-size: ${fontSize.education.mobileTitle};
+      margin: 0 0 0.1em;
+    `}
 
   ${({ portfolio }) =>
     portfolio &&
@@ -81,6 +105,32 @@ export const P = styled.p`
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
   margin: 0;
 
+  ${({ awards }) =>
+    awards &&
+    css`
+      font-size: ${fontSize.awards.mobileText};
+      font-weight: 500;
+    `}
+
+  ${({ awardsXs }) =>
+    awardsXs &&
+    css`
+      font-size: ${fontSize.awards.mobileText2};
+    `}
+
+  ${({ education }) =>
+    education &&
+    css`
+      font-size: ${fontSize.education.mobileText};
+      font-weight: 500;
+    `}
+
+  ${({ educationXs }) =>
+    educationXs &&
+    css`
+      font-size: ${fontSize.education.mobileText2};
+    `}
+  
   ${({ footer }) =>
     footer &&
     css`
@@ -247,10 +297,32 @@ export const Container = styled.div`
   margin: 0 auto;
   text-align: ${({ center }) => (center ? 'center' : 'left')};
 
+  ${({ awards }) =>
+    awards &&
+    css`
+      border-bottom: 1px solid #eeeeee;
+      padding: 0 0 0.5em;
+
+      & + & {
+        margin-top: 3em;
+      }
+    `}
+  
   ${({ card }) =>
     card &&
     css`
       width: 90%;
+    `}
+
+  ${({ education }) =>
+    education &&
+    css`
+      border-bottom: 1px solid #222831;
+      padding: 0 0 0.5em;
+
+      & + & {
+        margin-top: 3em;
+      }
     `}
 
   ${({ footerItem }) =>
@@ -305,6 +377,7 @@ export const Img = styled.img`
 export const Input = styled.input`
   display: block;
   font-family: ${textFont};
+  font-weight: 300;
   font-size: ${fontSize.contact.mobileText};
   background: #e5e5e5;
   border: none;
@@ -384,8 +457,7 @@ export const Row = styled.div`
 
 export const Section = styled.section`
   background-color: ${({ dark }) => (dark ? '#393E46' : '#eeeeee')};
-  min-height: 80vh;
-  padding: ${({ home }) => (home ? '6em 0 0' : '0.1em 0 3em')};
+  padding: ${({ home }) => (home ? '6em 0 0' : '3em 0 3em')};
 `
 
 export const StyledFooter = styled.footer`
@@ -442,6 +514,7 @@ export const Textarea = styled.textarea`
   max-width: 100%;
   min-height: 200px;
   font-family: ${textFont};
+  font-weight: 300;
   font-size: ${fontSize.contact.mobileText};
   background: #e5e5e5;
   border: none;
