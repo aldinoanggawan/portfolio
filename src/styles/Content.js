@@ -72,14 +72,14 @@ export const H3 = styled.h3`
     awards &&
     css`
       font-size: ${fontSize.awards.mobileTitle};
-      margin: 0 0 0.1em;
+      margin: 0 0 0.3em;
     `}
 
   ${({ education }) =>
     education &&
     css`
       font-size: ${fontSize.education.mobileTitle};
-      margin: 0 0 0.1em;
+      margin: 0 0 0.3em;
     `}
 
   ${({ portfolio }) =>
@@ -115,6 +115,7 @@ export const P = styled.p`
   ${({ awardsXs }) =>
     awardsXs &&
     css`
+      margin-top: 0.1em;
       font-size: ${fontSize.awards.mobileText2};
     `}
 
@@ -128,6 +129,7 @@ export const P = styled.p`
   ${({ educationXs }) =>
     educationXs &&
     css`
+      margin-top: 0.1em;
       font-size: ${fontSize.education.mobileText2};
     `}
   
@@ -301,7 +303,7 @@ export const Container = styled.div`
     awards &&
     css`
       border-bottom: 1px solid #eeeeee;
-      padding: 0 0 0.5em;
+      padding: 0 0 1em;
 
       & + & {
         margin-top: 3em;
@@ -318,7 +320,7 @@ export const Container = styled.div`
     education &&
     css`
       border-bottom: 1px solid #222831;
-      padding: 0 0 0.5em;
+      padding: 0 0 1em;
 
       & + & {
         margin-top: 3em;
@@ -457,7 +459,7 @@ export const Row = styled.div`
 
 export const Section = styled.section`
   background-color: ${({ dark }) => (dark ? '#393E46' : '#eeeeee')};
-  padding: ${({ home }) => (home ? '6em 0 0' : '3em 0 3em')};
+  padding: ${({ home }) => (home ? '6em 0 0' : '5em 0 5em')};
 `
 
 export const StyledFooter = styled.footer`

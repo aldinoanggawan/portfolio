@@ -1,18 +1,12 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
-import { EyeIcon } from '../styles/icon'
-import NavToggle from '../img/NavToggle.svg'
 import Logo from '../img/Logo.svg'
-import {
-  Button,
-  Container,
-  Header,
-  Img,
-  Row,
-  StyledLink,
-} from '../styles/content'
+import NavToggle from '../img/NavToggle.svg'
+import { Button, Container, Header, Img, Row, StyledLink } from '../styles/content'
+import { EyeIcon } from '../styles/icon'
 
-const Navbar = () => (
+const Navbar = ({ handleOnClick }) => (
   <Header>
     <Container row>
       <StyledLink href='/'>
@@ -23,9 +17,16 @@ const Navbar = () => (
           <EyeIcon />
           Portfolio
         </Button>
-        <img src={NavToggle} alt='nav-toggle-button' />
+        <div onClick={handleOnClick}>
+          <img src={NavToggle} alt='nav-toggle-button' />
+        </div>
       </Row>
     </Container>
   </Header>
 )
+
+Navbar.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
+}
+
 export default Navbar

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { Linkedin } from '@styled-icons/boxicons-logos'
 import { Envelope } from '@styled-icons/boxicons-regular'
-import { Code } from '@styled-icons/entypo'
+import { Code, Cross } from '@styled-icons/entypo'
 import { EyeOutline, GithubOutline } from '@styled-icons/evaicons-outline'
 import { LaptopCode } from '@styled-icons/fa-solid'
 import { Codesandbox } from '@styled-icons/simple-icons'
@@ -14,9 +14,10 @@ export const BackEndIcon = styled(Database)`
   color: #2bced6;
 `
 
+export const CrossIcon = styled(Cross)``
+
 export const EyeIcon = styled(EyeOutline)`
-  height: ${({ portfolio }) =>
-    portfolio ? fontSize.portfolio.mobileText : '1.2rem'};
+  height: ${({ portfolio }) => (portfolio ? fontSize.portfolio.mobileText : '1.2rem')};
   margin-right: 0.2em;
 `
 
