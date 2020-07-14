@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { H3, P, Button, Card, Img, Row, StyledLink, Tag, TagItem } from '../styles/content'
+import { H3, P, Button, Card, Img, Row, StyledLink, Tag, TagItem } from '../styles/contentStyle'
 import { EyeIcon, GithubIcon, SandboxIcon } from '../styles/icon'
 
 const CardPortfolio = ({ skill }) => {

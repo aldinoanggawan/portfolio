@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Route, Switch } from 'react-router-dom'
 
 import Awards from './components/Awards'
 import Contact from './components/Contact'
@@ -25,13 +26,17 @@ const App = () => {
     <>
       <Sidebar isSidebarOpen={isSidebarOpen} handleOnClose={handleOnClose} />
       <Navbar handleOnClick={handleOnClick} />
-      <Home />
-      <Skills />
-      <Portfolio />
-      <Education />
-      <Awards />
-      <Contact />
-      <Footer />
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+          <Skills />
+          <Portfolio />
+          <Education />
+          <Awards />
+          <Contact />
+          <Footer />
+        </Route>
+      </Switch>
     </>
   )
 }

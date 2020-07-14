@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { HashLink, NavHashLink } from 'react-router-hash-link'
 
 // font sizes and style
 export const fontSize = {
@@ -36,6 +37,9 @@ export const fontSize = {
   section: {
     mobileTitle: '2.5rem',
   },
+  sidebar: {
+    mobileTitle: '1.8rem',
+  },
   skills: {
     mobileTitle: '2rem',
     mobileTitle2: '1.25rem',
@@ -58,7 +62,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-family: ${titleFont};
   font-size: ${fontSize.home.mobileTitle};
-  color: #eeeeee;
+  color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
   margin: 1.4em 0 0.6em;
 `
 
@@ -254,6 +258,27 @@ export const Button = styled.a`
         background: #eeeeee;
       }
     `}
+
+  ${({ sidebar }) =>
+    sidebar &&
+    css`
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-family: ${titleFont};
+      font-weight: normal;
+      font-size: 1.6rem;
+      background: none;
+      border-radius: 0;
+      border: 1px solid #eeeeee;
+      margin: 0;
+      padding: 0.45em 0;
+
+      &:focus,
+      &:hover {
+        color: #222831;
+        background: #eeeeee;
+      }
+    `}
 `
 
 export const Card = styled.div`
@@ -432,6 +457,7 @@ export const Label = styled.label`
 
 export const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 
   ${({ footer }) =>
@@ -457,14 +483,82 @@ export const Row = styled.div`
     `}
 `
 
+export const ScrollAnchor = styled.div`
+  position: absolute;
+  top: -80px;
+  left: 0;
+`
+
 export const Section = styled.section`
+  position: relative;
   background-color: ${({ dark }) => (dark ? '#393E46' : '#eeeeee')};
-  padding: ${({ home }) => (home ? '6em 0 0' : '5em 0 5em')};
+  padding: ${({ home }) => (home ? '6em 0 0' : '4em 0 5em')};
+`
+
+export const SidebarButton = styled.button`
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: none;
+  }
 `
 
 export const StyledFooter = styled.footer`
   background: #222831;
   padding: 0.1em 0 1em;
+`
+
+export const StyledHashLink = styled(HashLink)`
+  cursor: pointer;
+  text-decoration: none;
+  color: #eeeeee;
+
+  &:focus,
+  &:hover {
+    opacity: 0.7;
+  }
+
+  ${({ button }) =>
+    button &&
+    css`
+      font-family: ${titleFont};
+      font-size: ${fontSize.navbar.mobileTitle};
+      font-weight: bold;
+      background-color: #00adb5;
+      border-radius: ${({ portfolio }) => (portfolio ? '5px' : '50px')};
+      margin-right: ${({ portfolio }) => (portfolio ? '0' : '1em')};
+      padding: 0.35em 0.65em;
+
+      display: flex;
+      align-items: center;
+
+      &:focus,
+      &:hover {
+        color: #00adb5;
+        background-color: #eeeeee;
+        opacity: 1;
+      }
+    `}
+
+  ${({ footerlogo }) =>
+    footerlogo &&
+    css`
+      display: inline-block;
+      opacity: 0.6;
+      margin: 2.3em 0;
+
+      &:focus,
+      &:hover {
+        opacity: 1;
+      }
+    `}
 `
 
 export const StyledLink = styled.a`
@@ -489,6 +583,25 @@ export const StyledLink = styled.a`
         opacity: 1;
       }
     `}
+`
+
+export const StyledNavHashLink = styled(NavHashLink)`
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: ${titleFont};
+  font-size: ${fontSize.sidebar.mobileTitle};
+  color: #eeeeee;
+  margin-bottom: 1.5em;
+
+  &:focus,
+  &:hover {
+    color: #00adb5;
+  }
+
+  &.active {
+    /* color: blue; */
+  }
 `
 
 export const Tag = styled.ul`

@@ -3,23 +3,28 @@ import React from 'react'
 
 import Logo from '../img/Logo.svg'
 import NavToggle from '../img/NavToggle.svg'
-import { Button, Container, Header, Img, Row, StyledLink } from '../styles/content'
+import { Container, Header, Img, Row, SidebarButton, StyledHashLink } from '../styles/contentStyle'
 import { EyeIcon } from '../styles/icon'
 
 const Navbar = ({ handleOnClick }) => (
   <Header>
     <Container row>
-      <StyledLink href='/'>
+      <StyledHashLink smooth to='/#home'>
         <Img src={Logo} alt='navbar-logo' />
-      </StyledLink>
+      </StyledHashLink>
       <Row>
-        <Button row href='/'>
+        <StyledHashLink button='true' smooth to='/#portfolio'>
           <EyeIcon />
           Portfolio
-        </Button>
-        <div onClick={handleOnClick}>
-          <img src={NavToggle} alt='nav-toggle-button' />
-        </div>
+        </StyledHashLink>
+        <SidebarButton
+          type='button'
+          onClick={() => {
+            handleOnClick()
+          }}
+        >
+          <Img src={NavToggle} alt='nav-toggle-button' />
+        </SidebarButton>
       </Row>
     </Container>
   </Header>

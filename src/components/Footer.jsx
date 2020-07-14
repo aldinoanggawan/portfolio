@@ -1,15 +1,24 @@
 import React from 'react'
 
 import Logo from '../img/Logo.svg'
-import { A, P, Button, Container, Img, Row, StyledFooter, StyledLink } from '../styles/content'
+import {
+  A,
+  P,
+  Button,
+  Container,
+  Img,
+  Row,
+  StyledFooter,
+  StyledHashLink,
+} from '../styles/contentStyle'
 import { GithubIcon, LinkedInIcon, MailIcon } from '../styles/icon'
 
 const Footer = () => (
   <StyledFooter>
     <Container center>
-      <StyledLink footerImg href='/'>
+      <StyledHashLink footerlogo='true' smooth to='/#home'>
         <Img fade footer src={Logo} alt='logo' />
-      </StyledLink>
+      </StyledHashLink>
       <P footer>Check out my resume !</P>
       <Button rectangle href='/'>
         resume
@@ -17,13 +26,13 @@ const Footer = () => (
     </Container>
     <Container center footerItem>
       <Row footer>
-        <A icon href='/'>
+        <A icon href='https://github.com/aldinoanggawan' target='_blank'>
           <GithubIcon />
         </A>
-        <A icon href='/'>
+        <A icon href='https://linkedin.com/in/aldino-anggawan-73aa39123' target='_blank'>
           <LinkedInIcon />
         </A>
-        <A icon href='/'>
+        <A icon href='mailto:aldinoanggawan@gmail.com'>
           <MailIcon />
         </A>
       </Row>

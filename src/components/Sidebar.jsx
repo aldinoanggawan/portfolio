@@ -2,18 +2,25 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { stack as StackSidebar } from 'react-burger-menu'
 
-import { CrossIcon } from '../styles/icon'
+import { Button, StyledNavHashLink } from '../styles/contentStyle'
+import { CrossIcon, DownloadIcon } from '../styles/icon'
 
 const Sidebar = ({ handleOnClose, isSidebarOpen }) => {
   const styles = {
     bmCrossButton: {
+      color: '#eeeeee',
       height: '50px',
       width: '50px',
+      '&:hover': {
+        color: '#00adb5',
+      },
     },
     bmCross: {
-      color: '#eeeeee',
       width: '50px',
       height: '50px',
+      '&:hover': {
+        color: '#00adb5',
+      },
     },
     bmMenuWrap: {
       position: 'fixed',
@@ -21,8 +28,11 @@ const Sidebar = ({ handleOnClose, isSidebarOpen }) => {
     },
     bmMenu: {
       background: '#222831',
-      padding: '2.5em 1.5em 0',
-      fontSize: '1.15em',
+      fontFamily: 'Eurostile',
+      fontSize: '1.8rem',
+      padding: '2.5em 0 0',
+      textAlign: 'center',
+      textTransform: 'uppercase',
     },
     bmMorphShape: {
       fill: '#373a47',
@@ -35,7 +45,7 @@ const Sidebar = ({ handleOnClose, isSidebarOpen }) => {
       display: 'block',
     },
     bmOverlay: {
-      background: 'rgba(0, 0, 0, 0.3)',
+      background: 'rgba(0, 0, 0, 0.6)',
     },
   }
   return (
@@ -46,15 +56,31 @@ const Sidebar = ({ handleOnClose, isSidebarOpen }) => {
       disableAutoFocus
       isOpen={isSidebarOpen}
       onClose={handleOnClose}
-      styles={styles}
       width={250}
+      styles={styles}
     >
-      <p>Home</p>
-      <p>Skills</p>
-      <p>Portfolio</p>
-      <p>Education</p>
-      <p>Awards</p>
-      <p>Contact Me</p>
+      <StyledNavHashLink smooth to='/#home' activeClassName='active' onClick={handleOnClose}>
+        Home
+      </StyledNavHashLink>
+      <StyledNavHashLink smooth to='/#skills' activeClassName='active' onClick={handleOnClose}>
+        Skills
+      </StyledNavHashLink>
+      <StyledNavHashLink smooth to='/#portfolio' activeClassName='active' onClick={handleOnClose}>
+        Portfolio
+      </StyledNavHashLink>
+      <StyledNavHashLink smooth to='/#education' activeClassName='active' onClick={handleOnClose}>
+        Education
+      </StyledNavHashLink>
+      <StyledNavHashLink smooth to='/#awards' activeClassName='active' onClick={handleOnClose}>
+        Awards
+      </StyledNavHashLink>
+      <StyledNavHashLink smooth to='/#contact' activeClassName='active' onClick={handleOnClose}>
+        Contact Me
+      </StyledNavHashLink>
+      <Button sidebar href='/'>
+        <DownloadIcon />
+        resume
+      </Button>
     </StackSidebar>
   )
 }

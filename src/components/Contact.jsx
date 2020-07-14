@@ -1,9 +1,19 @@
 import React from 'react'
 
-import { H1, Container, Form, Input, Label, Section, Textarea } from '../styles/content'
+import {
+  H1,
+  Container,
+  Form,
+  Input,
+  Label,
+  ScrollAnchor,
+  Section,
+  Textarea,
+} from '../styles/contentStyle'
 
 const Contact = () => (
   <Section>
+    <ScrollAnchor id='contact' />
     <Container center>
       <H1 dark>Contact Me</H1>
       <Form>

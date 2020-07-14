@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { H1, H3, P, Container, Section } from '../styles/content'
+import { H1, H3, P, Container, ScrollAnchor, Section } from '../styles/contentStyle'
 
 const Education = () => (
   <Section>
+    <ScrollAnchor id='education' />
     <Container center>
       <H1 dark>Education</H1>
       <Container education>

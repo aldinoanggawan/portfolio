@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { H1, H3, H4, P, Container, Section, Card } from '../styles/content'
+import { H1, H3, H4, P, Card, Container, ScrollAnchor, Section } from '../styles/contentStyle'
 import { BackEndIcon, FrontEndIcon, OtherIcon } from '../styles/icon'
 
 const Skills = () => (
   <Section>
+    <ScrollAnchor id='skills' />
     <Container center>
       <H1 dark>Skills</H1>
       <Container card center>

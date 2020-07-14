@@ -115,7 +115,7 @@ export const skills = {
     image: EzPark,
     link: {
       github: 'https://github.com/aldinoanggawan/EzPark-react-app',
-      sandbox: 'https://codesandbox.io/s/github/aldinoanggawan/expense-tracker-redux',
+      sandbox: 'https://codesandbox.io/s/github/aldinoanggawan/EzPark-react-app',
       live: 'https://ezpark-malledition.netlify.app/',
     },
     tag: [
@@ -145,7 +145,7 @@ export const skills = {
       },
     ],
     text:
-      'A bootcamp group final project of parking simulation web-app that shows available parking spots, gives direction and record the parking chosen. The web-app is connected to a Raspberry Pi to keep track of the parking spots.',
+      'A bootcamp group final project of parking simulation web-app that shows available parking spots, gives directions and save the parking chosen as history. The web-app is connected to a Raspberry Pi to keep track of the parking spots.',
     title: 'EzPark',
   },
 }

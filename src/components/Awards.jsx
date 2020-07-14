@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { H1, H3, P, Container, Section } from '../styles/content'
+import { H1, H3, P, Container, ScrollAnchor, Section } from '../styles/contentStyle'
 
 const Awards = () => (
   <Section dark>
+    <ScrollAnchor id='awards' />
     <Container center>
       <H1>Awards</H1>
       <Container awards>
