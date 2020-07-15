@@ -5,6 +5,7 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 import GlobalStyle from './styles/GlobalStyle'
+import 'react-toastify/dist/ReactToastify.css'
 
 ReactDOM.render(
   <React.StrictMode>

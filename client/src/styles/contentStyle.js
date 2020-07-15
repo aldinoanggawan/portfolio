@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { HashLink, NavHashLink } from 'react-router-hash-link'
+import { ToastContainer } from 'react-toastify'
 
 // font sizes and style
 export const fontSize = {
@@ -372,6 +373,15 @@ export const Form = styled.form`
   text-align: left;
 `
 
+export const FormError = styled.span`
+  position: absolute;
+  font-family: ${textFont};
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: red;
+  margin-top: 0.3em;
+`
+
 export const Header = styled.header`
   width: 100%;
   background-color: #393e46;
@@ -434,6 +444,17 @@ export const Input = styled.input`
       margin: 1.5em 0 0;
       padding: 0.5em 0;
 
+      &:disabled {
+        cursor: auto;
+        opacity: 0.3;
+
+        &:focus,
+        &:hover {
+          color: #2bced6;
+          background: none;
+        }
+      }
+
       &:hover,
       &:focus {
         color: #eeeeee;
@@ -444,6 +465,7 @@ export const Input = styled.input`
 `
 
 export const Label = styled.label`
+  position: relative;
   font-family: ${titleFont};
   font-size: ${fontSize.contact.mobileTitle};
   font-weight: bold;
@@ -601,6 +623,15 @@ export const StyledNavHashLink = styled(NavHashLink)`
 
   &.active {
     /* color: blue; */
+  }
+`
+
+export const StyledToastContainer = styled(ToastContainer).attrs({
+  toastClassName: 'toast',
+})`
+  .toast {
+    background-color: #00adb5;
+    color: #eeeeee;
   }
 `
 

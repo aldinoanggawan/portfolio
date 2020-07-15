@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
+// import { ToastContainer } from 'react-toastify'
 
 import Awards from './components/Awards'
 import Contact from './components/Contact'
@@ -10,6 +11,7 @@ import Navbar from './components/Navbar'
 import Portfolio from './components/Portfolio'
 import Sidebar from './components/Sidebar'
 import Skills from './components/Skills'
+import { StyledToastContainer } from './styles/contentStyle'
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -24,6 +26,17 @@ const App = () => {
 
   return (
     <>
+      <StyledToastContainer
+        position='top-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+      />
       <Sidebar isSidebarOpen={isSidebarOpen} handleOnClose={handleOnClose} />
       <Navbar handleOnClick={handleOnClick} />
       <Switch>

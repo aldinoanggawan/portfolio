@@ -1,4 +1,5 @@
 require('dotenv').config()
+const cors = require('cors')
 const express = require('express')
 const sendMail = require('./mail')
 
@@ -13,6 +14,13 @@ app.use(
   })
 )
 app.use(express.json())
+
+// Enable Cors
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+  })
+)
 
 app.get('/', (req, res) => {
   res.json({ message: 'GET request' })
