@@ -384,8 +384,8 @@ export const FormError = styled.span`
 
 export const Header = styled.header`
   width: 100%;
-  background-color: #393e46;
-  padding: 1em 0;
+  background: rgba(34, 40, 49, 0.8);
+  padding: 0.7em 0;
 
   position: fixed;
   top: 0;
@@ -507,7 +507,7 @@ export const Row = styled.div`
 
 export const ScrollAnchor = styled.div`
   position: absolute;
-  top: -80px;
+  top: -70.5px;
   left: 0;
 `
 
