@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { H3, P, Button, Card, Img, Row, StyledLink, Tag, TagItem } from '../styles/contentStyle'
+import { H3, P, Button, Card, Container, Img, Row, Tag, TagItem } from '../styles/contentStyle'
 import { EyeIcon, GithubIcon, SandboxIcon } from '../styles/icon'
 
 const CardPortfolio = ({ skill }) => {
   const { id, image, link, tag, text, title } = skill
   return (
     <Card portfolio>
-      <Img src={image} alt={id} />
+      <Container img>
+        <Img portfolio src={image} alt={id} />
+      </Container>
       <Card itemPortfolio>
         <H3 left portfolio>
-          <StyledLink href={`portfolio/${id}`}>{title}</StyledLink>
+          {title}
         </H3>
         <Tag>
           {tag.map(t => (

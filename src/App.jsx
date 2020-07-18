@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
-// import { ToastContainer } from 'react-toastify'
 
 import Awards from './components/Awards'
 import Contact from './components/Contact'

@@ -3,7 +3,17 @@ import React from 'react'
 
 import Logo from '../img/Logo.svg'
 import NavToggle from '../img/NavToggle.svg'
-import { Container, Header, Img, Row, SidebarButton, StyledHashLink } from '../styles/contentStyle'
+import {
+  Container,
+  Header,
+  Img,
+  Nav,
+  NavItem,
+  Row,
+  SidebarButton,
+  StyledHashLink,
+  StyledNavHashLink,
+} from '../styles/contentStyle'
 import { EyeIcon } from '../styles/icon'
 
 const Navbar = ({ handleOnClick }) => (
@@ -12,7 +22,34 @@ const Navbar = ({ handleOnClick }) => (
       <StyledHashLink smooth to='/#home'>
         <Img src={Logo} alt='navbar-logo' />
       </StyledHashLink>
-      <Row>
+      <Row navbar>
+        <Nav>
+          <NavItem>
+            <StyledNavHashLink bigscreen='true' smooth to='/#home' activeClassName='active'>
+              Home
+            </StyledNavHashLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavHashLink bigscreen='true' smooth to='/#skills' activeClassName='active'>
+              Skills
+            </StyledNavHashLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavHashLink bigscreen='true' smooth to='/#education' activeClassName='active'>
+              Education
+            </StyledNavHashLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavHashLink bigscreen='true' smooth to='/#awards' activeClassName='active'>
+              Awards
+            </StyledNavHashLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavHashLink bigscreen='true' smooth to='/#contact' activeClassName='active'>
+              Contact Me
+            </StyledNavHashLink>
+          </NavItem>
+        </Nav>
         <StyledHashLink button='true' smooth to='/#portfolio'>
           <EyeIcon />
           Portfolio

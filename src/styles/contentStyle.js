@@ -2,6 +2,12 @@ import styled, { css } from 'styled-components'
 import { HashLink, NavHashLink } from 'react-router-hash-link'
 import { ToastContainer } from 'react-toastify'
 
+// screen sizes
+export const screenSize = {
+  tablet: '768px',
+  laptop: '1024px',
+}
+
 // font sizes and style
 export const fontSize = {
   awards: {
@@ -93,6 +99,10 @@ export const H3 = styled.h3`
       text-align: left;
       font-size: ${fontSize.portfolio.mobileTitle};
       margin: 0.5em 0;
+
+      @media (min-width: ${screenSize.laptop}) {
+        margin: 0 0 0.5em;
+      }
     `}
 `
 
@@ -169,6 +179,11 @@ export const P = styled.p`
     css`
       line-height: 1.5;
       font-size: ${fontSize.portfolio.mobileText};
+
+      @media (min-width: ${screenSize.laptop}) {
+        margin: 0.5em 0 0.5em;
+        margin-bottom: 0.5em;
+      }
     `}
 `
 
@@ -212,19 +227,32 @@ export const A = styled.a`
 export const Button = styled.a`
   cursor: pointer;
   font-family: ${titleFont};
-  font-size: ${({ portfolio }) =>
-    portfolio ? fontSize.portfolio.mobileText : fontSize.navbar.mobileTitle};
+  font-size: ${fontSize.navbar.mobileTitle};
   font-weight: bold;
   text-decoration: none;
   color: #eeeeee;
   background-color: #00adb5;
-  border-radius: ${({ portfolio }) => (portfolio ? '5px' : '50px')};
-  margin-right: ${({ portfolio }) => (portfolio ? '0' : '1em')};
+  border-radius: 50px;
+  margin-right: 1em;
   padding: 0.35em 0.65em;
+  
+  ${({ portfolio }) =>
+    portfolio &&
+    css`
+      font-size: ${fontSize.portfolio.mobileText};
+      border-radius: 5px;
+      margin: 0.5em 0 0;
 
-  & + & {
-    margin-left: 0.5em;
-  }
+      @media (min-width: ${screenSize.laptop}) {
+        margin: 0;
+      }
+
+      & + & {
+        margin-left: 0.5em;
+      }
+    `}
+
+  
 
   &:focus,
   &:hover {
@@ -287,17 +315,13 @@ export const Card = styled.div`
     itemPortfolio &&
     css`
       padding: 0 0.75em 0.75em;
-    `}
 
-  ${({ itemSkills }) =>
-    itemSkills &&
-    css`
-      border: none;
-      border-radius: 0;
-      padding: 2.5em 0 2.75em;
+      @media (min-width: ${screenSize.laptop}) {
+        flex: 1 1 0;
+        padding: 1em 1em;
 
-      & + & {
-        border-top: 1px solid #d4e3e3;
+        display: flex;
+        flex-direction: column;
       }
     `}
 
@@ -305,9 +329,21 @@ export const Card = styled.div`
     portfolio &&
     css`
       background-color: #222831;
+      -webkit-box-shadow: 5px 6px 5px 0px rgba(40, 46, 54, 1);
+      -moz-box-shadow: 5px 6px 5px 0px rgba(40, 46, 54, 1);
+      box-shadow: 5px 6px 5px 0px rgba(40, 46, 54, 1);
 
       & + & {
         margin-top: 3em;
+
+        @media (min-width: ${screenSize.laptop}) {
+          margin-top: 4em;
+        }
+      }
+
+      @media (min-width: ${screenSize.laptop}) {
+        display: flex;
+        justify-content: space-between;
       }
     `}
 
@@ -316,6 +352,40 @@ export const Card = styled.div`
     css`
       border: 2px solid #d4e3e3;
       border-radius: 15px;
+      -webkit-box-shadow: 0px 3px 5px 2px rgba(213, 227, 226, 0.8);
+      -moz-box-shadow: 0px 3px 5px 2px rgba(213, 227, 226, 0.8);
+      box-shadow: 0px 3px 5px 2px rgba(213, 227, 226, 0.8);
+
+      @media (min-width: ${screenSize.tablet}) {
+        display: flex;
+        justify-content: space-between;
+      }
+    `}
+
+  ${({ skillsItem }) =>
+    skillsItem &&
+    css`
+      border: none;
+      border-radius: 0;
+      padding: 2.5em 0.5em 2.75em;
+
+      & + & {
+        border-top: 1px solid #d4e3e3;
+      }
+
+      @media (min-width: ${screenSize.tablet}) {
+        flex-basis: 33.3%;
+        padding: 2.5em 1em;
+
+        & + & {
+          border-top: none;
+          border-left: 2px solid #d4e3e3;
+        }
+      }
+
+      @media (min-width: 800px) {
+        padding: 2.5em 2em;
+      }
     `}
 `
 
@@ -330,6 +400,7 @@ export const Container = styled.div`
     css`
       border-bottom: 1px solid #eeeeee;
       padding: 0 0 1em;
+      max-width: 900px;
 
       & + & {
         margin-top: 3em;
@@ -340,6 +411,10 @@ export const Container = styled.div`
     card &&
     css`
       width: 90%;
+
+      @media (min-width: ${screenSize.tablet}) {
+        width: 100%;
+      }
     `}
 
   ${({ education }) =>
@@ -347,6 +422,7 @@ export const Container = styled.div`
     css`
       border-bottom: 1px solid #222831;
       padding: 0 0 1em;
+      max-width: 900px;
 
       & + & {
         margin-top: 3em;
@@ -360,6 +436,24 @@ export const Container = styled.div`
       border-top: 1px solid #47505d;
     `}
 
+  ${({ homeText }) =>
+    homeText &&
+    css`
+      max-width: 800px;
+    `}
+
+  ${({ img }) =>
+    img &&
+    css`
+      width: 100%;
+
+      @media (min-width: ${screenSize.laptop}) {
+        flex-basis: 55%;
+        align-self: center;
+        margin: 0;
+      }
+    `}
+    
   ${({ row }) =>
     row &&
     css`
@@ -390,6 +484,13 @@ export const Header = styled.header`
   position: fixed;
   top: 0;
   z-index: 100;
+
+  @media (min-width: ${screenSize.laptop}) {
+    background: rgba(34, 40, 49, 1);
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(40, 46, 54, 1);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(40, 46, 54, 1);
+    box-shadow: 0px 1px 5px 0px rgba(40, 46, 54, 1);
+  }
 `
 
 export const Img = styled.img`
@@ -408,6 +509,12 @@ export const Img = styled.img`
     css`
       width: 100%;
       max-width: 700px;
+    `}
+
+  ${({ portfolio }) =>
+    portfolio &&
+    css`
+      vertical-align: top;
     `}
 `
 
@@ -472,8 +579,44 @@ export const Label = styled.label`
   color: #2bced6;
   display: block;
 
+  @media (min-width: ${screenSize.tablet}) {
+    flex-basis: 49%;
+  }
+
   & + & {
     margin-top: 1.5em;
+
+    @media (min-width: ${screenSize.tablet}) {
+      margin-top: 0;
+    }
+  }
+
+  ${({ message }) =>
+    message &&
+    css`
+      margin-top: 1.5em;
+    `}
+`
+
+export const Nav = styled.ul`
+  display: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: ${screenSize.laptop}) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+`
+
+export const NavItem = styled.li`
+  display: none;
+  list-style: none;
+
+  @media (min-width: ${screenSize.laptop}) {
+    display: list-item;
+    margin-right: 1em;
   }
 `
 
@@ -489,11 +632,35 @@ export const Row = styled.div`
       margin: 2em 0;
     `}
 
+  ${({ form }) =>
+    form &&
+    css`
+      display: block;
+
+      @media (min-width: ${screenSize.tablet}) {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+    `}
+
+  ${({ navbar }) =>
+    navbar &&
+    css`
+      @media (min-width: ${screenSize.laptop}) {
+        justify-content: space-between;
+      }
+    `}
+
   ${({ portfolioButton }) =>
     portfolioButton &&
     css`
       justify-content: flex-end;
       margin: 2em 0 0;
+
+      @media (min-width: ${screenSize.laptop}) {
+        margin-top: auto;
+      }
     `}
 
   ${({ portfolioTag }) =>
@@ -521,6 +688,7 @@ export const SidebarButton = styled.button`
   cursor: pointer;
   background: none;
   border: none;
+  padding: 0;
 
   &:hover,
   &:focus {
@@ -529,6 +697,10 @@ export const SidebarButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  @media (min-width: ${screenSize.laptop}) {
+    display: none;
   }
 `
 
@@ -554,8 +726,8 @@ export const StyledHashLink = styled(HashLink)`
       font-size: ${fontSize.navbar.mobileTitle};
       font-weight: bold;
       background-color: #00adb5;
-      border-radius: ${({ portfolio }) => (portfolio ? '5px' : '50px')};
-      margin-right: ${({ portfolio }) => (portfolio ? '0' : '1em')};
+      border-radius: 50px;
+      margin-right: 1em;
       padding: 0.35em 0.65em;
 
       display: flex;
@@ -566,6 +738,10 @@ export const StyledHashLink = styled(HashLink)`
         color: #00adb5;
         background-color: #eeeeee;
         opacity: 1;
+      }
+
+      @media (min-width: ${screenSize.laptop}) {
+        margin: 0 0 0 0.5em;
       }
     `}
 
@@ -624,6 +800,13 @@ export const StyledNavHashLink = styled(NavHashLink)`
   &.active {
     /* color: blue; */
   }
+
+  ${({ bigscreen }) =>
+    bigscreen &&
+    css`
+      font-size: ${fontSize.navbar.mobileTitle};
+      margin: 0;
+    `}
 `
 
 export const StyledToastContainer = styled(ToastContainer).attrs({
@@ -642,6 +825,10 @@ export const Tag = styled.ul`
   align-items: center;
   margin: 1em 0 0.8em;
   padding: 0;
+
+  @media (min-width: ${screenSize.laptop}) {
+    margin: 0.3em 0 0.8em;
+  }
 `
 
 export const TagItem = styled.li`

@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { stack as StackSidebar } from 'react-burger-menu'
 
-import { Button, StyledNavHashLink } from '../styles/contentStyle'
-import { CrossIcon, DownloadIcon } from '../styles/icon'
+import { StyledNavHashLink } from '../styles/contentStyle'
+import { CrossIcon } from '../styles/icon'
 
 const Sidebar = ({ handleOnClose, isSidebarOpen }) => {
   const styles = {
@@ -77,10 +77,6 @@ const Sidebar = ({ handleOnClose, isSidebarOpen }) => {
       <StyledNavHashLink smooth to='/#contact' activeClassName='active' onClick={handleOnClose}>
         Contact Me
       </StyledNavHashLink>
-      <Button sidebar href='/'>
-        <DownloadIcon />
-        resume
-      </Button>
     </StackSidebar>
   )
 }

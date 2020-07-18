@@ -11,7 +11,7 @@ import {
   StyledFooter,
   StyledHashLink,
 } from '../styles/contentStyle'
-import { GithubIcon, LinkedInIcon, MailIcon } from '../styles/icon'
+import { DownloadIcon, GithubIcon, LinkedInIcon, MailIcon } from '../styles/icon'
 
 const Footer = () => (
   <StyledFooter>
@@ -21,6 +21,7 @@ const Footer = () => (
       </StyledHashLink>
       <P footer>Check out my resume !</P>
       <Button rectangle href='/'>
+        <DownloadIcon />
         resume
       </Button>
     </Container>

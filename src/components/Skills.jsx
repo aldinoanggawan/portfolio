@@ -10,7 +10,7 @@ const Skills = () => (
       <H1 dark>Skills</H1>
       <Container card center>
         <Card skills>
-          <Card itemSkills>
+          <Card skillsItem>
             <FrontEndIcon />
             <H3 dark>Front-End</H3>
             <H4>Language</H4>
@@ -26,23 +26,23 @@ const Skills = () => (
               Reactstrap, Material UI
             </P>
           </Card>
-          <Card itemSkills>
+          <Card skillsItem>
             <BackEndIcon />
             <H3 dark>Back-End</H3>
             <H4>Language</H4>
             <P dark skills>
-              Python
+              Javascript, Python
             </P>
             <H4>Framework</H4>
             <P dark skills>
-              Flask
+              Express, Flask
             </P>
             <H4>Database</H4>
             <P dark skills>
               PostgresQL
             </P>
           </Card>
-          <Card itemSkills>
+          <Card skillsItem>
             <OtherIcon />
             <H3 dark>Other</H3>
             <H4>UI / UX</H4>
