@@ -20,10 +20,12 @@ const Footer = () => (
         <Img fade footer src={Logo} alt='logo' />
       </StyledHashLink>
       <P footer>Check out my resume !</P>
-      <Button rectangle href='/'>
-        <DownloadIcon />
-        resume
-      </Button>
+      <Row button>
+        <Button row rectangle href='/'>
+          <DownloadIcon />
+          resume
+        </Button>
+      </Row>
     </Container>
     <Container center footerItem>
       <Row footer>

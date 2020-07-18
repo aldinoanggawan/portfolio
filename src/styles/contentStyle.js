@@ -235,6 +235,12 @@ export const Button = styled.a`
   border-radius: 50px;
   margin-right: 1em;
   padding: 0.35em 0.65em;
+
+  &:focus,
+  &:hover {
+    color: #00adb5;
+    background-color: #eeeeee;
+  }
   
   ${({ portfolio }) =>
     portfolio &&
@@ -252,14 +258,6 @@ export const Button = styled.a`
       }
     `}
 
-  
-
-  &:focus,
-  &:hover {
-    color: #00adb5;
-    background-color: #eeeeee;
-  }
-
   ${({ row }) =>
     row &&
     css`
@@ -270,7 +268,6 @@ export const Button = styled.a`
   ${({ rectangle }) =>
     rectangle &&
     css`
-      display: inline-block;
       text-transform: uppercase;
       letter-spacing: 3px;
       font-family: ${textFont};
@@ -624,6 +621,12 @@ export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
+  ${({ button }) =>
+    button &&
+    css`
+      justify-content: center;
+    `}
 
   ${({ footer }) =>
     footer &&
