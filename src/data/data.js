@@ -1,3 +1,4 @@
+import C19Stats from '../img/C19Stats.png'
 import ExpenseTracker from '../img/ExpenseTracker.png'
 import EzPark from '../img/EzPark.png'
 import InstagramClone from '../img/InstagramClone.png'
@@ -112,6 +113,24 @@ export const skills = {
   },
   4: {
     id: 4,
+    image: C19Stats,
+    link: {
+      github: 'https://github.com/aldinoanggawan/corona-check',
+      sandbox: 'https://codesandbox.io/s/github/aldinoanggawan/corona-check',
+      live: 'https://c19-stats.netlify.app/',
+    },
+    tag: [
+      {
+        id: 1,
+        text: 'React',
+      },
+    ],
+    text:
+      'A simple React app that shows Covid-19 statistics around the world based on the country chosen.',
+    title: 'C - 19 Stats',
+  },
+  5: {
+    id: 5,
     image: EzPark,
     link: {
       github: 'https://github.com/aldinoanggawan/EzPark-react-app',
