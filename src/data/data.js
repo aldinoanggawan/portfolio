@@ -78,7 +78,7 @@ export const skills = {
     link: {
       github: 'https://github.com/aldinoanggawan/expense-tracker-redux',
       sandbox: 'https://codesandbox.io/s/github/aldinoanggawan/expense-tracker-redux',
-      live: '',
+      live: 'https://expense-tracker-redux.netlify.app/',
     },
     tag: [
       {
