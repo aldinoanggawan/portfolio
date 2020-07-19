@@ -124,6 +124,10 @@ export const skills = {
         id: 1,
         text: 'React',
       },
+      {
+        id: 2,
+        text: 'PWA',
+      },
     ],
     text:
       'A simple React app that shows Covid-19 statistics around the world based on the country chosen.',
