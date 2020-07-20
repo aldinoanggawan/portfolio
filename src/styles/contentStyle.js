@@ -54,7 +54,7 @@ export const fontSize = {
   },
 }
 const textFont = 'Montserrat, sans-serif'
-const titleFont = 'Eurostile'
+const titleFont = 'Lato, sans-serif'
 
 // typography (alphabetical order)
 export const H1 = styled.h1`
@@ -62,6 +62,7 @@ export const H1 = styled.h1`
   letter-spacing: 5px;
   font-family: ${titleFont};
   font-size: ${fontSize.section.mobileTitle};
+  line-height: 1;
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
   margin: 0 0 1.3em;
 `
@@ -69,6 +70,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-family: ${titleFont};
   font-size: ${fontSize.home.mobileTitle};
+  line-height: 1;
   color: ${({ dark }) => (dark ? '#222831' : '#eeeeee')};
   margin: 1.4em 0 0.6em;
 `
@@ -76,6 +78,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   font-family: ${titleFont};
   font-size: ${fontSize.skills.mobileTitle};
+  line-height: 1;
   color: ${({ dark }) => (dark ? '#222831' : '#2BCED6')};
   margin: 0.5em 0 0;
 
@@ -728,6 +731,7 @@ export const StyledHashLink = styled(HashLink)`
       font-family: ${titleFont};
       font-size: ${fontSize.navbar.mobileTitle};
       font-weight: bold;
+      line-height: 1;
       background-color: #00adb5;
       border-radius: 50px;
       margin-right: 1em;
@@ -792,6 +796,7 @@ export const StyledNavHashLink = styled(NavHashLink)`
   text-transform: uppercase;
   font-family: ${titleFont};
   font-size: ${fontSize.sidebar.mobileTitle};
+  line-height: 1;
   color: #eeeeee;
   margin-bottom: 1.5em;
 

@@ -131,7 +131,7 @@ export const skills = {
     ],
     text:
       'A simple React app that shows Covid-19 statistics around the world based on the country chosen.',
-    title: 'C - 19 Stats',
+    title: 'C-19 Stats',
   },
   5: {
     id: 5,
