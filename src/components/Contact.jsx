@@ -40,6 +40,15 @@ const Contact = () => {
       })
     } catch (error) {
       console.log(error)
+      toast.error('Uh oh something went wrong, please try again ! 😊', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      })
       setIsLoading(false)
     }
   }
