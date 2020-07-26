@@ -21,7 +21,12 @@ const Footer = () => (
       </StyledHashLink>
       <P footer>Check out my resume !</P>
       <Row button>
-        <Button row rectangle href='/'>
+        <Button
+          row
+          rectangle
+          href='https://aldinoanggawan.s3.amazonaws.com/Resume+Aldino+Dwi+Anggawan.pdf'
+          target='_blank'
+        >
           <DownloadIcon />
           resume
         </Button>
@@ -32,7 +37,7 @@ const Footer = () => (
         <A icon href='https://github.com/aldinoanggawan' target='_blank'>
           <GithubIcon />
         </A>
-        <A icon href='https://linkedin.com/in/aldino-anggawan-73aa39123' target='_blank'>
+        <A icon href='https://www.linkedin.com/in/aldinoanggawan/' target='_blank'>
           <LinkedInIcon />
         </A>
         <A icon href='mailto:aldinoanggawan@gmail.com'>
