@@ -140,6 +140,7 @@ export const skills = {
       github: 'https://github.com/aldinoanggawan/EzPark-react-app',
       sandbox: 'https://codesandbox.io/s/github/aldinoanggawan/EzPark-react-app',
       live: 'https://ezpark-malledition-2.netlify.app/',
+      video: 'https://youtu.be/8HmPjaBPh-4',
     },
     tag: [
       {

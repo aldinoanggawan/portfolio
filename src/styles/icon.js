@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { Linkedin } from '@styled-icons/boxicons-logos'
+import { Linkedin, Youtube } from '@styled-icons/boxicons-logos'
 import { Download, Envelope } from '@styled-icons/boxicons-regular'
 import { Code, Cross } from '@styled-icons/entypo'
 import { EyeOutline, GithubOutline } from '@styled-icons/evaicons-outline'
@@ -48,6 +48,11 @@ export const MailIcon = styled(Envelope)`
 export const OtherIcon = styled(LaptopCode)`
   height: 50px;
   color: #2bced6;
+`
+
+export const PlayIcon = styled(Youtube)`
+  height: ${fontSize.portfolio.mobileText};
+  margin-right: 0.2em;
 `
 
 export const SandboxIcon = styled(Codesandbox)`

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { H3, P, Button, Card, Container, Img, Row, Tag, TagItem } from '../styles/contentStyle'
-import { EyeIcon, GithubIcon, SandboxIcon } from '../styles/icon'
+import { EyeIcon, GithubIcon, PlayIcon, SandboxIcon } from '../styles/icon'
 
 const CardPortfolio = ({ skill }) => {
   const { id, image, link, tag, text, title } = skill
@@ -36,6 +36,12 @@ const CardPortfolio = ({ skill }) => {
             <EyeIcon portfolio />
             Live
           </Button>
+          {link.video && (
+            <Button row portfolio href={link.video} target='_blank'>
+              <PlayIcon />
+              Video
+            </Button>
+          )}
         </Row>
       </Card>
     </Card>
@@ -50,6 +56,7 @@ CardPortfolio.propTypes = {
       github: PropTypes.string.isRequired,
       sandbox: PropTypes.string.isRequired,
       live: PropTypes.string.isRequired,
+      video: PropTypes.string.isRequired,
     }).isRequired,
     tag: PropTypes.arrayOf(
       PropTypes.shape({
