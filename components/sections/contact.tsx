@@ -32,7 +32,8 @@ export const Contact = () => {
         Let&apos;s work together
       </p>
       <p className="mb-8 max-w-md text-base leading-relaxed text-muted-foreground">
-        Have a project in mind or just want to say hello? My inbox is always open.
+        Have a project in mind or just want to say hello? My inbox is always
+        open.
       </p>
       <a
         href="mailto:aldinoanggawan@gmail.com"
