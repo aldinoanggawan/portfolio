@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aldino Anggawan — Software Engineer",
-  description: "Software engineer building thoughtful, performant web applications.",
+  title: "Aldino Anggawan — Frontend Engineer",
+  description: "Frontend engineer with 5+ years shipping React, React Native, and TypeScript across SaaS, edtech, and payroll. Based in Petaling Jaya, Malaysia. Open to remote.",
 };
 
 const RootLayout = ({
