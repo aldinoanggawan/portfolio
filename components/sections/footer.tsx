@@ -1,9 +1,8 @@
 export const Footer = () => {
   return (
-    <footer className="border-t border-border px-6 py-8">
-      <div className="mx-auto max-w-4xl flex items-center justify-between text-xs text-muted-foreground">
-        <span>© {new Date().getFullYear()} Aldino Anggawan</span>
-        <span>Built with Next.js</span>
+    <footer className="border-t border-border">
+      <div className="mx-auto max-w-4xl w-full px-6 py-12 text-xs text-muted-foreground">
+        <span>© 2026 Aldino Anggawan</span>
       </div>
     </footer>
   );
