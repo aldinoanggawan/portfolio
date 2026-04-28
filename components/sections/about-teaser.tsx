@@ -1,4 +1,4 @@
-export function AboutTeaser() {
+export const AboutTeaser = () => {
   return (
     <section className="px-6 py-24 mx-auto max-w-4xl w-full">
       <h2 className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -19,4 +19,4 @@ export function AboutTeaser() {
       </div>
     </section>
   );
-}
+};

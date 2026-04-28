@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-export function Hero() {
+export const Hero = () => {
   return (
     <section className="flex min-h-[calc(100vh-65px)] flex-col items-start justify-center px-6 py-24 mx-auto max-w-4xl w-full">
       <p className="mb-4 text-sm font-medium tracking-widest text-muted-foreground uppercase">
@@ -22,4 +22,4 @@ export function Hero() {
       </div>
     </section>
   );
-}
+};

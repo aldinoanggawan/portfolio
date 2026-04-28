@@ -4,7 +4,7 @@ import { AboutTeaser } from "@/components/sections/about-teaser";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/sections/footer";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <main className="flex flex-col items-center">
@@ -16,4 +16,6 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+
+export default Home;
