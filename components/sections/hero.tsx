@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <section className="flex min-h-[calc(100vh-65px)] flex-col items-start justify-center px-6 py-24 mx-auto max-w-4xl w-full">
+    <section className="flex min-h-[75vh] flex-col items-start justify-center px-6 pt-24 pb-16 mx-auto max-w-4xl w-full">
       <p className="mb-4 text-sm font-medium tracking-widest text-muted-foreground uppercase">
-        Frontend Engineer · Petaling Jaya, MY · Open to Remote
+        <span className="sm:hidden">Frontend Engineer</span>
+        <span className="hidden sm:inline md:hidden">Frontend Engineer · Petaling Jaya, MY</span>
+        <span className="hidden md:inline">Frontend Engineer · Petaling Jaya, MY · Open to Remote</span>
       </p>
       <h1 className="mb-6 text-5xl font-bold tracking-tight leading-tight sm:text-6xl">
         Aldino Anggawan.
