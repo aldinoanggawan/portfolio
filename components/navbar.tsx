@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
-import { useSyncExternalStore } from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { useTheme } from 'next-themes';
+import { useSyncExternalStore } from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const subscribe = () => () => {};
 
@@ -42,7 +42,11 @@ const SunIcon = () => (
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
-  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-sm">
@@ -56,17 +60,19 @@ export const Navbar = () => {
           </Link>
           <span className="flex items-center gap-1.5">
             <span className="size-1.5 rounded-full bg-green-500" />
-            <span className="text-xs font-normal text-muted-foreground">Open to work</span>
+            <span className="text-xs font-normal text-muted-foreground">
+              Open to work
+            </span>
           </span>
         </div>
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           aria-label="Toggle theme"
         >
           {mounted ? (
-            theme === "dark" ? (
+            theme === 'dark' ? (
               <SunIcon />
             ) : (
               <MoonIcon />

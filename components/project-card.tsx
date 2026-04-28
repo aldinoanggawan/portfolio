@@ -21,7 +21,12 @@ const ExternalLinkIcon = () => (
   </svg>
 );
 
-export const ProjectCard = ({ title, description, tags, href }: ProjectCardProps) => {
+export const ProjectCard = ({
+  title,
+  description,
+  tags,
+  href,
+}: ProjectCardProps) => {
   return (
     <a
       href={href}
@@ -33,7 +38,7 @@ export const ProjectCard = ({ title, description, tags, href }: ProjectCardProps
         className="h-40 w-full"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.72 0.18 55 / 0.6) 0%, oklch(0.22 0.02 255 / 0.9) 100%)",
+            'linear-gradient(135deg, oklch(0.72 0.18 55 / 0.6) 0%, oklch(0.22 0.02 255 / 0.9) 100%)',
         }}
       />
       <div className="flex flex-1 flex-col gap-3 p-5">

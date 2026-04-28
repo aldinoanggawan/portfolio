@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+import { Providers } from './providers';
+import { Navbar } from '@/components/navbar';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Aldino Anggawan — Frontend Engineer",
-  description: "Frontend engineer with 5+ years shipping React, React Native, and TypeScript across SaaS, edtech, and payroll. Based in Petaling Jaya, Malaysia. Open to remote.",
+  title: 'Aldino Anggawan — Frontend Engineer',
+  description:
+    'Frontend engineer with 5+ years shipping React, React Native, and TypeScript across SaaS, edtech, and payroll. Based in Petaling Jaya, Malaysia. Open to remote.',
 };
 
 const RootLayout = ({

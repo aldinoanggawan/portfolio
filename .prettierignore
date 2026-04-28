@@ -1,0 +1,10 @@
+.next
+node_modules
+public
+*.md
+*.config.js
+*.config.mjs
+*.config.ts
+.eslintrc*
+next.config.*
+tailwind.config.*

@@ -6,9 +6,12 @@ export const AboutTeaser = () => {
       </h2>
       <div className="max-w-xl">
         <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-          I&apos;m a frontend engineer with 5+ years of experience building production React and React Native applications. I specialize in shipping complex UI within Agile teams and am an early{" "}
-          <span className="text-primary font-medium">AI-native</span>{" "}
-          practitioner. I care about code quality, clear communication with non-technical stakeholders, and sustainable pace.
+          I&apos;m a frontend engineer with 5+ years of experience building
+          production React and React Native applications. I specialize in
+          shipping complex UI within Agile teams and am an early{' '}
+          <span className="text-primary font-medium">AI-native</span>{' '}
+          practitioner. I care about code quality, clear communication with
+          non-technical stakeholders, and sustainable pace.
         </p>
         <a
           href="/about"
