@@ -11,7 +11,7 @@ export const AboutTeaser = () => {
           practitioner. I care about code quality, clear communication with non-technical stakeholders, and sustainable pace.
         </p>
         <a
-          href="#"
+          href="/about"
           className="text-sm font-medium text-primary underline-offset-4 hover:underline"
         >
           About me →

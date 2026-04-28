@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const subscribe = () => () => {};
@@ -46,13 +47,18 @@ export const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-        <span className="flex items-center gap-2 text-sm font-semibold tracking-tight">
-          Aldino Anggawan
+        <div className="flex items-center gap-2">
+          <Link
+            href="/"
+            className="text-sm font-semibold tracking-tight no-underline hover:opacity-70 transition-opacity"
+          >
+            Aldino Anggawan
+          </Link>
           <span className="flex items-center gap-1.5">
             <span className="size-1.5 rounded-full bg-green-500" />
             <span className="text-xs font-normal text-muted-foreground">Open to work</span>
           </span>
-        </span>
+        </div>
         <Button
           variant="ghost"
           size="icon"
