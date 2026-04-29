@@ -6,7 +6,7 @@
 This project uses Prettier for formatting. Follow these rules in 
 all code you write:
 
-- No semicolons
+- Use semicolons
 - Single quotes for strings
 - Trailing commas everywhere (arrays, objects, function params)
 - 2 space indentation
