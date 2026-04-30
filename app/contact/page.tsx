@@ -1,7 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site';
 
 import { ContactForm } from '@/components/contact-form';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Get in touch with Aldino Anggawan — open to remote frontend engineering roles.',
+  alternates: { canonical: `${siteConfig.url}/contact` },
+  openGraph: {
+    url: `${siteConfig.url}/contact`,
+    images: [{ url: '/og/contact', width: 1200, height: 630 }],
+  },
+};
 
 const ContactPage = () => {
   return (

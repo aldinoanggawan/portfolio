@@ -18,8 +18,59 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: siteConfig.title,
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: siteConfig.description,
+  keywords: [
+    'Aldino Anggawan',
+    'Frontend Engineer Malaysia',
+    'React Developer Kuala Lumpur',
+    'React Native Engineer',
+    'TypeScript developer',
+    'Next.js developer',
+    'Remote frontend engineer',
+    'Petaling Jaya developer',
+  ],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.ogDescription,
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+        alt: siteConfig.title,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.ogDescription,
+    images: ['/og'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: siteConfig.url,
+  },
 };
 
 const RootLayout = ({
