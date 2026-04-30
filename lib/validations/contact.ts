@@ -1,9 +1,15 @@
 import { z } from 'zod';
 
 export const contactSchema = z.object({
-  name: z.string().min(2).max(100),
-  email: z.email(),
-  message: z.string().min(10).max(2000),
+  name: z
+    .string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(100, 'Name is too long'),
+  email: z.email('Please enter a valid email address'),
+  message: z
+    .string()
+    .min(10, 'Message must be at least 10 characters')
+    .max(2000, 'Message is too long'),
   _honey: z.string().optional(),
 });
 
