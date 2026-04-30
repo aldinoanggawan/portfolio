@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
 
 export const Hero = () => {
@@ -25,7 +27,7 @@ export const Hero = () => {
           <a href="#work">View my work</a>
         </Button>
         <Button asChild variant="outline" size="lg" className="px-6">
-          <a href="#contact">Say hello</a>
+          <Link href="/contact">Say hello</Link>
         </Button>
       </div>
     </section>

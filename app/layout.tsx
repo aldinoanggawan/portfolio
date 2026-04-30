@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Toaster } from 'sonner';
 import './globals.css';
 import { Providers } from './providers';
 import { Navbar } from '@/components/navbar';
@@ -35,6 +36,7 @@ const RootLayout = ({
         <Providers>
           <Navbar />
           {children}
+          <Toaster richColors position="bottom-right" />
         </Providers>
       </body>
     </html>

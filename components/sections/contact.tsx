@@ -15,7 +15,7 @@ export const Contact = () => {
       </p>
       <a
         href="mailto:aldinoanggawan@gmail.com"
-        className="mb-8 inline-block text-base font-medium underline underline-offset-4 hover:text-muted-foreground transition-colors"
+        className="mb-8 inline-block text-base font-medium text-amber-500 underline underline-offset-4 hover:text-amber-400 transition-colors"
       >
         aldinoanggawan@gmail.com
       </a>
