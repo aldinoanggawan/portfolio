@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://aldinoanggawan.com'),
   title: 'Aldino Anggawan — Frontend Engineer',
   description:
     'Frontend engineer with 5+ years shipping React, React Native, and TypeScript across SaaS, edtech, and payroll. Based in Petaling Jaya, Malaysia. Open to remote.',
