@@ -1,6 +1,14 @@
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
+import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 import { contactSchema } from '@/lib/validations/contact';
+
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(2, '60 m'),
+});
 
 let resend: Resend | null = null;
 
@@ -14,6 +22,18 @@ const getResend = (): Resend => {
 
 export async function POST(request: Request) {
   try {
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+      '127.0.0.1';
+    const { success } = await ratelimit.limit(ip);
+
+    if (!success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 },
+      );
+    }
+
     const resend = getResend();
     const body = await request.json();
     const result = contactSchema.safeParse(body);
