@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const AboutTeaser = () => {
   return (
     <section className="px-6 py-24 mx-auto max-w-4xl w-full">
@@ -13,12 +15,12 @@ export const AboutTeaser = () => {
           practitioner. I care about code quality, clear communication with
           non-technical stakeholders, and sustainable pace.
         </p>
-        <a
+        <Link
           href="/about"
           className="text-sm font-medium text-primary underline-offset-4 hover:underline"
         >
           About me →
-        </a>
+        </Link>
       </div>
     </section>
   );
