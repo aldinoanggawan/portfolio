@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next';
+import { siteConfig } from '@/lib/site';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Aldino Anggawan',
-    short_name: 'Aldino',
+    name: siteConfig.name,
+    short_name: siteConfig.shortName,
     icons: [
       {
         src: '/web-app-manifest-192x192.png',

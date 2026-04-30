@@ -4,6 +4,7 @@ import { useTheme } from 'next-themes';
 import { useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { siteConfig } from '@/lib/site';
 
 const subscribe = () => () => {};
 
@@ -56,7 +57,7 @@ export const Navbar = () => {
             href="/"
             className="text-sm font-semibold tracking-tight no-underline hover:opacity-70 transition-opacity"
           >
-            Aldino Anggawan
+            {siteConfig.name}
           </Link>
           <span className="flex items-center gap-1.5">
             <span className="size-1.5 rounded-full bg-green-500" />

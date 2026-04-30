@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site';
 
 const AboutPage = () => {
   return (
@@ -105,10 +106,10 @@ const AboutPage = () => {
         <p className="leading-relaxed text-muted-foreground">
           Want to chat? Reach me at{' '}
           <a
-            href="mailto:aldinoanggawan@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             className="text-amber-500 underline underline-offset-4 transition-colors hover:text-amber-400"
           >
-            aldinoanggawan@gmail.com
+            {siteConfig.email}
           </a>
         </p>
       </main>

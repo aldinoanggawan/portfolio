@@ -4,6 +4,7 @@ import { Toaster } from 'sonner';
 import './globals.css';
 import { Providers } from './providers';
 import { Navbar } from '@/components/navbar';
+import { siteConfig } from '@/lib/site';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,10 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://aldinoanggawan.com'),
-  title: 'Aldino Anggawan — Frontend Engineer',
-  description:
-    'Frontend engineer with 5+ years shipping React, React Native, and TypeScript across SaaS, edtech, and payroll. Based in Petaling Jaya, Malaysia. Open to remote.',
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
 };
 
 const RootLayout = ({

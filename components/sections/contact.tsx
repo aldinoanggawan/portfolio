@@ -1,4 +1,5 @@
 import { GitHubIcon, LinkedInIcon } from '@/components/icons';
+import { siteConfig } from '@/lib/site';
 
 export const Contact = () => {
   return (
@@ -14,14 +15,14 @@ export const Contact = () => {
         open.
       </p>
       <a
-        href="mailto:aldinoanggawan@gmail.com"
+        href={`mailto:${siteConfig.email}`}
         className="mb-8 inline-block text-base font-medium text-amber-500 underline underline-offset-4 hover:text-amber-400 transition-colors"
       >
-        aldinoanggawan@gmail.com
+        {siteConfig.email}
       </a>
       <div className="flex gap-4">
         <a
-          href="https://github.com/aldinoanggawan"
+          href={siteConfig.github}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -30,7 +31,7 @@ export const Contact = () => {
           <GitHubIcon />
         </a>
         <a
-          href="https://linkedin.com/in/aldinoanggawan"
+          href={siteConfig.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
