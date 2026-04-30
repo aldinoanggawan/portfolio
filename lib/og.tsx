@@ -2,6 +2,7 @@ import React from 'react';
 import { ImageResponse } from 'next/og';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { siteConfig } from '@/lib/site';
 
 interface OgLayoutProps {
   title: string;
@@ -70,7 +71,7 @@ export const OgLayout = ({
           color: '#E07B00',
         }}
       >
-        aldinoanggawan.com
+        {siteConfig.host}
       </div>
     </div>
   );

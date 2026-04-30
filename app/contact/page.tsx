@@ -1,6 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site';
 
 import { ContactForm } from '@/components/contact-form';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Get in touch with Aldino Anggawan — open to remote frontend engineering roles.',
+  alternates: { canonical: `${siteConfig.url}/contact` },
+  openGraph: {
+    url: `${siteConfig.url}/contact`,
+    images: [{ url: '/og/contact', width: 1200, height: 630 }],
+  },
+};
 
 const ContactPage = () => {
   return (
@@ -25,10 +38,10 @@ const ContactPage = () => {
         <p className="mt-10 text-sm text-muted-foreground">
           Prefer email? Reach me at{' '}
           <a
-            href="mailto:aldinoanggawan@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             className="text-amber-500 underline underline-offset-4 transition-colors hover:text-amber-400"
           >
-            aldinoanggawan@gmail.com
+            {siteConfig.email}
           </a>
         </p>
       </main>

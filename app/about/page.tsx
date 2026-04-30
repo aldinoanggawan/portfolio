@@ -1,4 +1,17 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Learn about Aldino Anggawan — a Frontend Engineer from Petaling Jaya with 5+ years building React and React Native apps across SaaS, edtech, and payroll.',
+  alternates: { canonical: `${siteConfig.url}/about` },
+  openGraph: {
+    url: `${siteConfig.url}/about`,
+    images: [{ url: '/og/about', width: 1200, height: 630 }],
+  },
+};
 
 const AboutPage = () => {
   return (
@@ -105,10 +118,10 @@ const AboutPage = () => {
         <p className="leading-relaxed text-muted-foreground">
           Want to chat? Reach me at{' '}
           <a
-            href="mailto:aldinoanggawan@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             className="text-amber-500 underline underline-offset-4 transition-colors hover:text-amber-400"
           >
-            aldinoanggawan@gmail.com
+            {siteConfig.email}
           </a>
         </p>
       </main>
