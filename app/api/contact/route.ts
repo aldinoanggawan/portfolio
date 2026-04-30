@@ -2,9 +2,19 @@ import { Resend } from 'resend';
 
 import { contactSchema } from '@/lib/validations/contact';
 
+let resend: Resend | null = null;
+
+const getResend = (): Resend => {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+
+  return resend;
+};
+
 export async function POST(request: Request) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = getResend();
     const body = await request.json();
     const result = contactSchema.safeParse(body);
 
