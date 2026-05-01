@@ -73,6 +73,28 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteConfig.name,
+  url: siteConfig.url,
+  jobTitle: 'Frontend Engineer',
+  description: siteConfig.description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Petaling Jaya',
+    addressCountry: 'MY',
+  },
+  sameAs: [siteConfig.linkedin, siteConfig.github],
+  knowsAbout: [
+    'React',
+    'React Native',
+    'TypeScript',
+    'Next.js',
+    'Frontend Engineering',
+  ],
+};
+
 const RootLayout = ({
   children,
 }: Readonly<{
@@ -84,6 +106,14 @@ const RootLayout = ({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <Providers>
           <Navbar />
