@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import { ScrollToButton } from '@/components/scroll-to-button';
 
 export const Hero = () => {
   return (
@@ -23,9 +24,9 @@ export const Hero = () => {
         AI-native practitioners at my company.
       </p>
       <div className="flex flex-wrap gap-3">
-        <Button asChild size="lg" className="px-6">
-          <a href="#work">View my work</a>
-        </Button>
+        <ScrollToButton targetId="work" className="px-6">
+          View my work
+        </ScrollToButton>
         <Button asChild variant="outline" size="lg" className="px-6">
           <Link href="/contact">Say hello</Link>
         </Button>
